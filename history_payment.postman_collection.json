@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "c64d49b1-72f2-4cc0-bcfc-41b0decfe9d3",
+		"name": "history_payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23794317"
+	},
+	"item": [
+		{
+			"name": "add_plan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_id",
+							"value": "1",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "dsad@sdsfd.fdfdsf",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "1234567891",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "plan_name",
+							"value": "fdsf",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "12345",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "fds",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "response",
+							"value": "dsfd",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "payment_getway",
+							"value": "sdfsdfd",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/add_plan",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"add_plan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "app_setting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_id",
+							"value": "1",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/app_setting",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"app_setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_id",
+							"value": "1",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sadsad@fcdsfds.sdfsdfds",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "1234567891",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user_details",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user_details"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
