@@ -20,7 +20,7 @@ class AppContoller extends AppBaseController
     }
 
 
-    public function index(Request $request)
+    public function index1(Request $request)
     {
         Cookie::queue(Cookie::forget('appId'));
         Cookie::queue(Cookie::forget('appName'));
@@ -34,6 +34,27 @@ class AppContoller extends AppBaseController
 
         return view('app.index', compact('permission'));
     }
+
+    public function index(Request $request)
+{
+    Cookie::queue(Cookie::forget('appId'));
+    Cookie::queue(Cookie::forget('appName'));
+
+    if ($request->ajax()) {
+        return Datatables::of((new AppDatatable())->get())->make(true);
+    }
+
+    $permission = [];
+    $role = auth()->user()->user_role->first(); // avoid undefined index
+
+    if ($role) {
+        foreach ($role->permission as $value) {
+            $permission[] = $value['slug'];
+        }
+    }
+
+    return view('app.index', compact('permission'));
+}
 
     /**
      * Show the form for creating a new resource.
